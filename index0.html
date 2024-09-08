@@ -6,16 +6,51 @@
   <meta name="viewport" content="width=device-width">
   <title>Bubble</title>
   <style>
-
+    div {
+      display: grid;
+      border: 1px solid green;
+      padding: 5px;
+      grid-template-columns: 1fr 1fr 1fr 3fr;
+    }
   </style>
 </head>
 
 <body>
+  <div id="container">
+    <div class="flag" id="congo"><img src="https://www.worldometers.info/img/flags/small/tn_cg-flag.gif" /></div>
+    <div class="flag" id="columbia"><img src="https://www.worldometers.info/img/flags/small/tn_co-flag.gif" /></div>
+    <div class="flag" id="car"><img src="https://www.worldometers.info/img/flags/small/tn_ct-flag.gif" /></div>
+<!--     <div class="flag" id="austria"><img src="https://www.worldometers.info/img/flags/small/tn_au-flag.gif" /></div> -->
+  </div>
 
-
-
-
+  <p><a href="https://www.worldometers.info/geography/flags-of-the-world/" target="_blank">Flags of the World.</a></p>
   <script>
+    // const container = document.querySelector('#container');
+
+    for (let i = 0; i < container.childElementCount; i++) {
+      container.children[i].children[0].style.visibility = "visible";
+    }
+
+    const image0 = container.children[0].children[0];
+    const image1 = container.children[1].children[0];
+    const image2 = container.children[2].children[0];
+
+    image0.addEventListener('click', (e) => {
+      image0.style.visibility = "hidden";
+      // console.log(e);
+      // console.log(e.target);
+    });
+    image1.addEventListener('click', (e) => {
+      image1.style.visibility = "hidden";
+      // console.log(e);
+      // console.log(e.target);
+    });
+    image2.addEventListener('click', (e) => {
+      image2.style.visibility = "hidden";
+      // console.log(e);
+      // console.log(e.target);
+    }); 
+
   </script>
 </body>
 
