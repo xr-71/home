@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Web Storage API example</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    const greetings = ['Happy Birthday!',
+                     'Merry Christmas my love',
+                      'A happy Christmas to all the family', 
+                      'You\'re all I want for Christmas', 
+                      'Get well soon'];
+    const ul = document.createElement('ul');
+
+    for (greeting of greetings) {
+      const li = document.createElement('li');
+      ul.appendChild(li);
+      li.textContent = greeting;
+    }
+    document.body.appendChild(ul);
+
+    let i = 0;
+    for (greeting in greetings) {
+      if (!greetings[greeting].includes('Christmas')) { 
+        console.log(ul.children.item(greeting-i).innerHTML);
+        ul.children.item(greeting - i).remove();
+        i++;
+      }
+
+    }
+
+    // for (greeting of greetings) {
+    //   if (greeting.includes('Christmas')) {
+    //     const li = document.createElement('li');
+    //     ul.appendChild(li);
+    //     li.textContent = greeting;
+    //   }
+    // }
+    // document.body.appendChild(ul);
+
+  </script>
+</body>
+
+</html>
